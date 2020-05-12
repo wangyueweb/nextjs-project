@@ -48,25 +48,18 @@ module.exports = (__webpack_require__(/*! dll-reference dll_c2e10d183b950a67d9e7
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _this = undefined,
-    _jsxFileName = "E:\\mytools\\WWW\\react\\nextjs-project\\pages\\index.js";
-
+/* harmony import */ var _test_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../test.css */ "./test.css");
+/* harmony import */ var _test_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_test_css__WEBPACK_IMPORTED_MODULE_1__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return __jsx("span", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 1,
-      columnNumber: 22
-    }
-  }, "Index");
+  return __jsx("span", null, "Index");
 });
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=E%3A%5Cmytools%5CWWW%5Creact%5Cnextjs-project%5Cpages%5Cindex.js&hotRouterUpdates=true ***!
   \*******************************************************************************************************************************************************/
@@ -89,5 +82,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

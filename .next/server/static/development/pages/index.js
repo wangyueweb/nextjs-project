@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -104,21 +104,27 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "E:\\mytools\\WWW\\react\\nextjs-project\\pages\\index.js";
+/* harmony import */ var _test_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../test.css */ "./test.css");
+/* harmony import */ var _test_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_test_css__WEBPACK_IMPORTED_MODULE_1__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-/* harmony default export */ __webpack_exports__["default"] = (() => __jsx("span", {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 1,
-    columnNumber: 22
-  }
-}, "Index"));
+
+/* harmony default export */ __webpack_exports__["default"] = (() => __jsx("span", null, "Index"));
 
 /***/ }),
 
-/***/ 4:
+/***/ "./test.css":
+/*!******************!*\
+  !*** ./test.css ***!
+  \******************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
