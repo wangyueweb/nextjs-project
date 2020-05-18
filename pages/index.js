@@ -13,7 +13,7 @@ const events = [
 
 function makeEvent(type){
     return (...args) => {
-        console.log(type, ...args)
+        // console.log(type, ...args)
     }
 }
 
@@ -34,6 +34,7 @@ export default () => {
             <Link href="/a?id=1" as="/a/1">
                 <Button>Index</Button>
             </Link>
+
             <Button onClick={gotoTestB}>go to test B</Button>
         </>
     )

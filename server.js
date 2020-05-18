@@ -13,7 +13,6 @@ app.prepare().then(() => {
     router.get('/a/:id', async ctx => {
         const id = ctx.params.id
 
-        console.log(id)
         await handle(ctx.req, ctx.res, {
             pathname: '/a',
             query: {id},
@@ -25,7 +24,6 @@ app.prepare().then(() => {
     router.get('/test/b/:id', async ctx => {
         const id = ctx.params.id
 
-        console.log(ctx.params);
         await handle(ctx.req, ctx.res, {
             pathname: '/test/b',
             query: {id},
