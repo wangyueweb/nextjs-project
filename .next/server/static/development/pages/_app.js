@@ -113,9 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var children = _ref.children;
-
-  /*#__PURE__*/
-  react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/a?id=1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_0___default.a, null, "A")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/test/b"
@@ -1052,30 +1050,31 @@ var MyApp = /*#__PURE__*/function (_App) {
     key: "getInitialProps",
     value: function () {
       var _getInitialProps = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee(_ref) {
-        var Component, pageProps;
+        var Component, ctx, pageProps;
         return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                Component = _ref.Component;
-                pageProps = {};
+                Component = _ref.Component, ctx = _ref.ctx;
 
                 if (!Component.getInitialProps) {
-                  _context.next = 6;
+                  _context.next = 8;
                   break;
                 }
 
-                _context.next = 5;
-                return Component.getInitialProps();
+                _context.next = 4;
+                return Component.getInitialProps(ctx);
 
-              case 5:
+              case 4:
                 pageProps = _context.sent;
-
-              case 6:
-                console.log(pageProps);
-                return _context.abrupt("return", pageProps);
+                return _context.abrupt("return", {
+                  pageProps: pageProps
+                });
 
               case 8:
+                return _context.abrupt("return", {});
+
+              case 9:
               case "end":
                 return _context.stop();
             }

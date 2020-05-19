@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "antd";
-export default ({children}) => {
+export default ({children}) => (
     <>
         <header>
             <Link href="/a?id=1">
@@ -14,5 +14,4 @@ export default ({children}) => {
         </header>
         {children}
     </>
-    
-}
+)

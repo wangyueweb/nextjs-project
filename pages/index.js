@@ -31,11 +31,8 @@ export default () => {
 
     return (
         <>
-            <Link href="/a?id=1" as="/a/1">
-                <Button>Index</Button>
-            </Link>
-
-            <Button onClick={gotoTestB}>go to test B</Button>
+            <span>Index</span>
+            <a>Index a</a>
         </>
     )
 }

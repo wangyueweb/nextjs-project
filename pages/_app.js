@@ -3,14 +3,15 @@ import "antd/dist/antd.css";
 import Layout from "../components/layout";
 
 class MyApp extends App {
-  static async getInitialProps({ Component }) {
-    let pageProps = {};
+  static async getInitialProps({ Component, ctx }) {
 
     if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps();
+      const pageProps = await Component.getInitialProps(ctx);
+      return { pageProps };
+    }else{
+      return {}
     }
-    console.log(pageProps);
-    return pageProps;
+    
   }
 
   render() {
