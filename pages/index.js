@@ -31,7 +31,9 @@ export default () => {
 
     return (
         <>
-            <span>Index</span>
+            <Link href="/">
+                <span>Index</span>
+            </Link>
             <a>Index a</a>
         </>
     )

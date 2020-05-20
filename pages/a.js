@@ -1,28 +1,48 @@
 import { withRouter } from "next/router";
-import Comp from "../components/comp";
+import dynamic from "next/dynamic"
 import Link from "next/link";
-const A = ({ router, name }) => (
+import styled from "styled-components";
+// import Comp from '../components/comp'
+// import moment from "moment"
+
+const Comp = dynamic(import('../components/comp'))
+
+const Title = styled.h1`
+  color: yellow;
+  font-size: 40px;
+`
+const color = "#ff6600";
+
+const A = ({ router, name, time }) => (
   <>
+    <Title>This is title {time}</Title>
+    <Comp/>
     <Link href="#aaa">
       <a className="link">
-      这是a页面, 参数是{router.query.id} {name}
+        这是a页面, 参数是{router.query.id} {name}
       </a>
     </Link>
 
     <style jsx>{`
-      span {color: green}
-      .link {color: red}
+      span {
+        color: green;
+      }
+      .link {
+        color: ${color};
+      }
     `}</style>
   </>
 );
 
 A.getInitialProps = async (ctx) => {
+  const moment = await import('moment')
   const promise = new Promise((resolve, reject) => {
-    // setTimeout(() => {
-    resolve({
-      name: "Nick",
-    });
-    // },1000)
+    setTimeout(() => {
+      resolve({
+        name: "Nick",
+        time: moment.default(Date.now() - 60*1000).fromNow()
+      });
+    },1000)
   });
 
   return await promise;
