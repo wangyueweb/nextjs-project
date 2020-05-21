@@ -6,12 +6,12 @@ import withSubscription from '../../components/WithSubscription/index'
 
 const CommentListWithSubscription = withSubscription(
     CommentList,
-    (DataSource) => DataSource.getComments()
+    (a) => a.getComments()
 );
 
 const BlogPostWithSubscription = withSubscription(
     BlogPost,
-    (DataSource, props) => DataSource.getBlogPost(props.id)
+    (a) => a.getBlogPost()
 );
 export default class extends React.Component {
     constructor(props) {
@@ -33,7 +33,7 @@ export default class extends React.Component {
         return (
             <div style={style}>
                 <h1 style={style.title}>hello hoc</h1>
-                <CommentListWithSubscription name="nick" data2={['1','2','3']}/>
+                <CommentListWithSubscription />
                 <BlogPostWithSubscription />
             </div>
         );
