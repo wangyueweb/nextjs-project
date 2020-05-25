@@ -1,33 +1,72 @@
-import { createStore, applyMiddleware } from "redux"
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, applyMiddleware, combineReducers } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import ReduxThunk from "redux-thunk";
 
 const initialState = {
-    count: 0
+  count: 0,
+};
+
+const userInitialState = {
+  username: "nick",
+  age: 18,
+};
+
+const ADD = "ADD";
+
+function countReducer(state = initialState, action) {
+  switch (action.type) {
+    case ADD:
+      return { count: state.count + (action.num || 1) };
+    default:
+      return state;
+  }
 }
 
-const ADD = 'ADD'
+const UPDATE_USERNAME = "UPDATE_USERNAME";
 
-function reducer(state = initialState, action){
-    console.log(state, action);
-    switch(action.type){
-        case "ADD":
-            return {count: state.count + 1}
-        default:
-            return state
-        
-    }
+function userReducer(state = userInitialState, action) {
+  switch (action.type) {
+    case UPDATE_USERNAME:
+      return { ...state, username: action.name };
+    default:
+      return state;
+  }
 }
 
-const store = createStore(reducer, initialState);
+const allReducers = combineReducers({
+  counter: countReducer,
+  user: userReducer,
+});
 
-console.log(store.getState(),1);
+const store = createStore(
+  allReducers,
+  {
+    counter: initialState,
+    user: userInitialState,
+  },
+  applyMiddleware(ReduxThunk)
+);
 
-store.dispatch({type: ADD})
+// action create
+function add(num) {
+  return {
+    type: ADD,
+    num,
+  };
+}
 
-console.log(store.getState(),2);
+function addAsync(num) {
+  return (dispatch) => {
+      setTimeout(() => {
+          dispatch(add(num));
+      },1000)
+  }
+}
+store.dispatch(add(3));
+store.dispatch(addAsync(3));
 
 store.subscribe(() => {
-    console.log(store.getState());
-})
+  console.log(store.getState());
+});
 
-export default store
+export default store;
