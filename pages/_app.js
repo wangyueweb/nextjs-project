@@ -3,15 +3,15 @@ import "antd/dist/antd.css";
 import Layout from "../components/layout";
 import MyContext from "../lib/my-context";
 import { Provider } from 'react-redux'
-import store from "../store/store"
+import withRedux from "../lib/with-redux"
 
 class MyApp extends App {
   state={
     context: 'value'
   }
 
-  static async getInitialProps({ Component, ctx }) {
-
+  static async getInitialProps(ctx) {
+    const { Component } = ctx;
     if (Component.getInitialProps) {
       const pageProps = await Component.getInitialProps(ctx);
       return { pageProps };
@@ -22,11 +22,14 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, reduxStore } = this.props
+
+    console.log('reduxStore', reduxStore);
+
     return (
-      <Container>                                                                                                                                                                                                                                                                                                                                                                      
+      <Container>                                                                                                                                                                                                                                                                                   
         <Layout>
-          <Provider store={store}>
+          <Provider store={reduxStore}>
             <MyContext.Provider value={this.state.context}>
               <Component {...pageProps} />
               <button onClick={() => this.setState({context: `${this.state.context} 111`})}>update context</button>
@@ -38,4 +41,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp;
+export default withRedux(MyApp);
